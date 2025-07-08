@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { setTimeout } from 'timers/promises';
 
-test.only('Login - 1', async ({ }, testInfo) => {
+test('Login - 1', async ({ }, testInfo) => {
   console.log(` START:  ${testInfo.title}`);
 
   // Access the workerIndex from testInfo
