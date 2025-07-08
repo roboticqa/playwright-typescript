@@ -1,7 +1,9 @@
 import { test } from '@playwright/test';
 import { setTimeout } from 'timers/promises';
 
-test('Login - 1', async ({ }, testInfo) => {
+test.describe.configure({mode:'serial'})
+
+test.only('Login - 1', async ({ }, testInfo) => {
   console.log(` START:  ${testInfo.title}`);
 
   // Access the workerIndex from testInfo
