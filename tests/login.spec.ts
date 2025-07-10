@@ -1,9 +1,9 @@
 import { test } from '@playwright/test';
 import { setTimeout } from 'timers/promises';
 
-test.describe.configure({mode:'serial'})
+test.describe.configure({mode:'parallel'})
 
-test.only('Login - 1', async ({ }, testInfo) => {
+test('Login - 1', async ({ page }, testInfo) => {
   console.log(` START:  ${testInfo.title}`);
 
   // Access the workerIndex from testInfo
@@ -17,7 +17,7 @@ test.only('Login - 1', async ({ }, testInfo) => {
 
 test('Login - 2', async ({ }, testInfo) => {
   console.log(` START: ${testInfo.title}`);
-
+  test.fail();
   // Access the workerIndex from testInfo
   const workerIndex = testInfo.workerIndex;
   // Print the workerIndex to the console
