@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { PlaywrightDevPage } from '../pages/playwright-dev-page';
+import { asyncWrapProviders } from 'async_hooks';
+import { setTimeout } from 'timers/promises';
 
 test('getting started should contain table of contents', async ({ page }) => {
   const playwrightDev = new PlaywrightDevPage(page);
@@ -23,3 +25,4 @@ test('should show Page Object Model article', async ({ page }) => {
   await playwrightDev.pageObjectModel();
   await expect(page.locator('article')).toContainText('Page Object Model is a common pattern');
 });
+
