@@ -15,7 +15,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
 
   // Retry on CI only.
-  retries : process.env.CI ? 2:2,
+  //retries : process.env.CI ? 2:2,
 
   // reporter
   reporter :'html',
